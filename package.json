@@ -1,6 +1,6 @@
 {
   "name": "auto-bump",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Bumping version automatically for package.json",
   "main": "index.js",
   "bin": "index.js",
