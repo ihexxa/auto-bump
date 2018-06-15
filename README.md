@@ -5,7 +5,7 @@
   Bump version in package.json automatically according to git log.
 </p>
 <p align="center">
-  <img src="/ihexxa/auto-bump/raw/master/demo.png" alt="auto-bump">
+  <img src="https://github.com/ihexxa/auto-bump/raw/master/demo.png" alt="auto-bump">
 <p>
 
 Choose Language: English | [简体中文](./README_zh_cn.md)
@@ -42,7 +42,7 @@ $ npm install -D auto-bump
 Only one command to bump your version:
 
 ```sh
-$ yarn auto-bumpbump
+$ yarn auto-bump
 ```
 
 Then auto-bump will traverse git logs and bump version for each commit. And you will see package.json version is udpated.

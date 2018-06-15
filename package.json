@@ -1,13 +1,13 @@
 {
   "name": "auto-bump",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "Bumping version automatically for package.json",
   "main": "index.js",
   "author": "hexxa",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "lint": "node_modules/.bin/eslint index.js && ./node_modules/.bin/eslint auto_bump.js"
+    "test": "yarn jest"
   },
   "dependencies": {
     "cli-color": "^1.2.0",
