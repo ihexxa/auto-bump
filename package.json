@@ -1,6 +1,6 @@
 {
   "name": "auto-bump",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Bumping version automatically for package.json",
   "main": "index.js",
   "author": "hexxa",
