@@ -3,6 +3,7 @@
   "version": "0.0.7",
   "description": "Bumping version automatically for package.json",
   "main": "index.js",
+  "bin": "index.js",
   "author": "hexxa",
   "license": "MIT",
   "private": false,
