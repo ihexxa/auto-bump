@@ -42,7 +42,7 @@ $ npm install -D auto-bump
 Only one command to bump your version:
 
 ```sh
-$ yarn auto-bumpbump
+$ yarn auto-bump
 ```
 
 Then auto-bump will traverse git logs and bump version for each commit. And you will see package.json version is udpated.
