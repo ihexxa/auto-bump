@@ -17,7 +17,7 @@ const defaultOptions = {
 
 function parseConfig(config) {
   if (config == null) {
-    throw new Error(`${repoPath}/package.json is not found`);
+    throw new Error(`package.json is not found`);
   }
   if (config.autoBump == null) {
     return { ...config, autoBump: {} };

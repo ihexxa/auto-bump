@@ -15,7 +15,12 @@ test("parseConfig should return error when config is not valid", () => {
   ];
 
   tests.forEach(testCase => {
-    expect(parseConfig(testCase.config) == null).toBe(testCase.isValid);
+    try {
+      const _config = parseConfig(testCase.config);
+      expect(testCase.isValid).toBe(true);
+    } catch (_err) {
+      expect(testCase.isValid).toBe(false);
+    }
   });
 });
 
