@@ -5,6 +5,11 @@
   自动根据git日志提升pacakge.json中的版本
 </p>
 <p align="center">
+  <a href="https://travis-ci.org/ihexxa/auto-bump">
+    <img src="https://travis-ci.org/ihexxa/auto-bump.svg?branch=master" />
+  </a>
+</p>
+<p align="center">
   <img src="https://github.com/ihexxa/auto-bump/raw/master/demo.png" alt="auto-bump">
 <p>
 
