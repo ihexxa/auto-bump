@@ -15,25 +15,20 @@ const defaultOptions = {
   patchPattern: "^fix"
 };
 
-function checkConfig(config) {
+function parseConfig(config) {
   if (config == null) {
-    return new Error(`${repoPath}/package.json is not found`);
+    throw new Error(`package.json is not found`);
   }
   if (config.autoBump == null) {
-    return new Error(`autoBump config is not found in package.json`);
+    return { ...config, autoBump: {} };
   }
 
-  return null;
+  return config;
 }
 
 class AutoBump {
   constructor(repoPath, config, walk, gitUtil, fsUtil) {
-    const err = checkConfig(config);
-    if (err == null) {
-      this.config = config;
-    } else {
-      printError("Invalid config:", err);
-    }
+    this.config = parseConfig(config);
 
     this.walk = walk;
     this.gitUtil = gitUtil;
@@ -68,6 +63,10 @@ class AutoBump {
       prevVersion != null ? prevVersion : "0.0.1"
     );
 
+    if (nextVersion === this.config.version) {
+      printError("No new commit is found, version is not bumped.");
+      return;
+    }
     this.updateConfig(nextVersion);
   }
 
@@ -104,7 +103,7 @@ class AutoBump {
       this.fsUtil.updateVersion(this.repoPath, config);
       this.gitUtil.commit(this.repoPath, nextVersion);
     } catch (err) {
-      printError("Fail to update package.json or git commit: ", err);
+      printError(`Fail to update package.json or git commit: ${err}`);
     }
   }
 
@@ -147,6 +146,6 @@ class AutoBump {
 
 module.exports = {
   AutoBump,
-  checkConfig,
+  parseConfig,
   defaultOptions
 };

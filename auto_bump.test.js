@@ -1,21 +1,26 @@
 "use strict";
-const { AutoBump, checkConfig, defaultOptions } = require("./auto_bump");
+const { AutoBump, parseConfig, defaultOptions } = require("./auto_bump");
 const { FsUtil } = require("./fs_util");
 
-test("checkConfig should return error when config is not valid", () => {
+test("parseConfig should return error when config is not valid", () => {
   const tests = [
     {
-      config: {},
+      config: null,
       isValid: false
     },
     {
-      config: { autoBump: {} },
+      config: {},
       isValid: true
     }
   ];
 
   tests.forEach(testCase => {
-    expect(checkConfig(testCase.config) == null).toBe(testCase.isValid);
+    try {
+      const _config = parseConfig(testCase.config);
+      expect(testCase.isValid).toBe(true);
+    } catch (_err) {
+      expect(testCase.isValid).toBe(false);
+    }
   });
 });
 
