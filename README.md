@@ -5,7 +5,7 @@
   Bump version in package.json automatically according to git log.
 </p>
 <p align="center">
-  <img src="/ihexxa/autobump/raw/master/demo.png" alt="auto-bump">
+  <img src="/ihexxa/auto-bump/raw/master/demo.png" alt="auto-bump">
 <p>
 
 Choose Language: English | [简体中文](./README_zh_cn.md)

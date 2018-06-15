@@ -5,7 +5,7 @@
   自动根据git日志提升pacakge.json中的版本
 </p>
 <p align="center">
-  <img src="/ihexxa/autobump/raw/master/demo.png" alt="auto-bump">
+  <img src="/ihexxa/auto-bump/raw/master/demo.png" alt="auto-bump">
 <p>
 
 选择语言: [English](./README.md) | 简体中文
