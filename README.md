@@ -1,36 +1,58 @@
-# auto-bump
+<h1 align="center">
+  AutoBump
+</h1>
+<p align="center">
+  Bump version in package.json automatically according to git log.
+</p>
+<p align="center">
+  <img src="/ihexxa/autobump/raw/master/demo.png" alt="auto-bump">
+<p>
 
-#### Description
-Version bumper for package.json.
+Choose Language: English | [简体中文](./README_zh_cn.md)
 
-#### Software Architecture
-Software architecture description
+## Background
 
-#### Installation
+Help to bump `version` in `pacakge.json` according to commit types (such as fix, feature or breaking change).
 
-1. xxxx
-2. xxxx
-3. xxxx
+For example:
+If previous version is "1.0.0" (using git tag), and there are 3 commits after that version, they are:
 
-#### Instructions
+- BREAKING CHANGE(button): add button api
+- feat(button): add button
+- fix(button): fix button bug
 
-1. xxxx
-2. xxxx
-3. xxxx
+The version should be `2.1.1`.
 
-#### Contribution
+By inputting `yarn auto-bump`, `version` in `package.json` will be updated to `2.1.1`.
 
-1. Fork the project
-2. Create Feat_xxx branch
-3. Commit your code
-4. Create Pull Request
+## Install
 
+```sh
+$ yarn add -D auto-bump
+```
 
-#### Gitee Feature
+or
 
-1. You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2. Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3. Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4. The most valuable open source project [GVP](https://gitee.com/gvp)
-5. The manual of Gitee [http://git.mydoc.io/](http://git.mydoc.io/)
-6. The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+```sh
+$ npm install -D auto-bump
+```
+
+## Usage
+
+Only one command to bump your version:
+
+```sh
+$ yarn auto-bumpbump
+```
+
+Then auto-bump will traverse git logs and bump version for each commit. And you will see package.json version is udpated.
+
+Please notice that auto-bump will check commit subject to decide bumping major/minor/patch version. So by default your commit subject should follow [Conventional Commits](https://conventionalcommits.org/). Or your can add custom matching patterns in `package.json`, you can check `package.json` in this repository as example.
+
+## Contribute
+
+WIP.
+
+## License
+
+[MIT](LICENSE) © Hexxa

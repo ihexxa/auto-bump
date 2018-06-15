@@ -1,0 +1,49 @@
+{
+  "name": "auto-bump",
+  "version": "0.0.1",
+  "description": "Bumping version automatically for package.json",
+  "main": "index.js",
+  "author": "hexxa",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "lint": "node_modules/.bin/eslint index.js && ./node_modules/.bin/eslint auto_bump.js"
+  },
+  "dependencies": {
+    "cli-color": "^1.2.0",
+    "color": "^3.0.0",
+    "commander": "^2.15.1",
+    "git-tag": "^0.2.0",
+    "gitlog": "^3.1.2",
+    "global": "^4.3.2",
+    "semver": "^5.5.0"
+  },
+  "autoBump": {
+    "majorPattern": "^BREAKING CHANGE",
+    "minorPattern": "^feat",
+    "patchPattern": "^fix"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint-config-google": "^0.9.1",
+    "jest": "^23.1.0"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "./",
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/coverage/"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "verbose": true
+  }
+}
