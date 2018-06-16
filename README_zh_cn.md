@@ -17,7 +17,7 @@
 
 ## 背景
 
-自动根据提交类型，提升`package.json`的`version`字段。
+自动根据提交类型，提升`package.json`的`version`字段.
 
 举个栗子:
 如果当前版本是`1.0.0`(用 git tag 标记), 并且自该版本有提交了 3 次， 它们是：
@@ -31,6 +31,11 @@
 输入 `yarn auto-bump`, 则`package.json`的`version`字段会自动更新为`2.1.1`.
 
 ## 安装
+
+### 前提
+
+- git 历史中, 只有一条根分支.
+- 提交标题应该复合[Conventional Commits](https://conventionalcommits.org/) (或者你需要在`package.json`中添加 autoBump 配置来指定自定义匹配规则)
 
 ```sh
 $ yarn add -D auto-bump
@@ -50,15 +55,19 @@ $ npm install -D auto-bump
 $ yarn auto-bump
 ```
 
-然后 auto-bump 会遍历 git log，并对每个提交提升版本。并且最后你会看到`package.json`被更新了。
-然后你就能看到 `package.json` 中的`version` 更新了。
+首先 auto-bump 会检查前一个版本是否有相应的 tag. 如果没有则会从根分支的第一个提交开始遍历每个提交, 并提升版本. 然后你就能看到 `package.json` 中的`version` 更新了.
 
-请注意 auto-bump 会继承检查 git commit 的标题来决定提升 major/minor/patch 版本。因此默认你的提交应该符合[Conventional Commits](https://conventionalcommits.org/)标准。
-或者你可以在`package.json`中添加自定义的匹配模式，可以参考本库的`package.json`作为例子。
+请注意 auto-bump 会继承检查 git commit 的标题来决定提升 major/minor/patch 版本.因此默认你的提交应该符合[Conventional Commits](https://conventionalcommits.org/)标准.
+或者你可以在`package.json`中添加自定义的匹配模式，可以参考本库的`package.json`作为例子.
 
 ## 贡献
 
 WIP.
+
+## 待完成
+
+- 添加 Javascript API
+- 添加生命期钩子
 
 ## 许可证
 
