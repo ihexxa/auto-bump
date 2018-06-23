@@ -1,5 +1,5 @@
 <h1 align="center">
-  AutoBump
+  Auto-Bump
 </h1>
 <p align="center">
   自动根据git日志提升pacakge.json中的版本

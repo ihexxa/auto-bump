@@ -1,5 +1,5 @@
 <h1 align="center">
-  AutoBump
+  Auto-Bump
 </h1>
 <p align="center">
   Bump version in package.json automatically according to git log.
