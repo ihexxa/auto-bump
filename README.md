@@ -1,5 +1,5 @@
 <h1 align="center">
-  AutoBump
+  Auto-Bump
 </h1>
 <p align="center">
   Bump version in package.json automatically according to git log.
@@ -32,6 +32,11 @@ By inputting `yarn auto-bump`, `version` in `package.json` will be updated to `2
 
 ## Install
 
+### Preconditions
+
+- There is only one root branch in git history.
+- Subjects of commits should align to [Conventional Commits](https://conventionalcommits.org/) (or you need to add autoBump config in `package.json` to specify custom matching patterns).
+
 ```sh
 $ yarn add -D auto-bump
 ```
@@ -50,13 +55,20 @@ Only one command to bump your version:
 $ yarn auto-bump
 ```
 
-Then auto-bump will traverse git logs and bump version for each commit. And you will see package.json version is udpated.
+At first auto-bump will check if there is tag for previous version.
+Or it will traverse from the first commit of root branch and bump version for each commit.
+And you will see package.json version is udpated.
 
-Please notice that auto-bump will check commit subject to decide bumping major/minor/patch version. So by default your commit subject should follow [Conventional Commits](https://conventionalcommits.org/). Or your can add custom matching patterns in `package.json`, you can check `package.json` in this repository as example.
+Please notice that auto-bump will check commit subject to decide bumping major/minor/patch version. So by default your commit subject should follow [Conventional Commits](https://conventionalcommits.org/). Or your can add custom matching patterns in `package.json`, you can refer `package.json` in this repository as example.
 
 ## Contribute
 
 WIP.
+
+## TODO
+
+- Add API for Javascript
+- Add life cycle functions
 
 ## License
 

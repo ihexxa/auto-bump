@@ -1,14 +1,14 @@
 {
   "name": "auto-bump",
-  "version": "0.0.9",
-  "description": "Bumping version automatically for package.json",
+  "version": "0.0.10",
+  "description": "Bump version in package.json automatically according to git log",
   "main": "index.js",
   "bin": "index.js",
   "author": "hexxa",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "yarn jest"
+    "test": "yarn jest --coverage"
   },
   "dependencies": {
     "cli-color": "^1.2.0",
